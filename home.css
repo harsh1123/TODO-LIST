@@ -1,0 +1,311 @@
+
+
+body{
+ margin:0;
+ background-color: lightslategray;
+}
+
+
+
+/* creating main div for the todo App*/
+
+
+.main-div{
+
+    width:60%;
+    margin:auto;
+    background-color: white;
+    height: auto;
+    display:flex;
+    flex-direction:column;
+    
+    
+}
+
+/* div for the title */
+
+.div-title{
+    width:100%;
+
+    height:10vh;
+    text-align: center;
+    margin-top: 1rem;
+    font-family: sans-serif;
+    color:gray;
+    
+    border-bottom: 1px solid gray;
+
+}
+
+/* div for the form created to fetch the data*/
+
+.form-div{
+
+width:100%;
+height:auto;
+display:flex;
+flex-direction: column;
+
+
+}
+
+/*  div created inside the form for select and date and creating add and delete button  */
+
+
+.form-inside{
+
+
+    width:100%;
+    height:auto;
+ 
+     display:flex;
+     flex-direction: column; 
+
+
+}
+
+/* div for the text area */
+
+.div-textarea{
+   
+    height:16vh;
+    width:100%;
+    border-bottom: 1px solid gray;
+    
+    
+    
+}
+
+/* hovering on text area div */
+
+.div-textarea:hover{
+    background-color: gainsboro;
+}
+
+
+
+ textarea
+{
+    
+    
+    border:none;
+    font-size: larger;
+    
+   
+}
+
+textarea:hover{
+    background-color: gainsboro;
+}
+
+/* creating div for selecting category and date */
+
+.category_date
+{
+    width:100%;
+    height:15vh;
+   display: flex;
+   flex-direction: row;
+  
+   position: relative;
+  
+}
+
+/* div for category */
+
+.category{
+    width: 50%;
+    height:15vh;
+    border: 1px solid gray;
+    position: relative;
+  
+   
+    
+}
+
+/* hovering over category div */
+
+
+
+/* select for selecting the category */
+
+.category select
+{
+    position:absolute;
+    top:40%;
+    right: 1%;
+    width: 28rem;
+    height:5vh;
+    background-color: red;
+    color: white;
+   
+}
+
+.category select:hover{
+    background-color: yellow;
+    color:black;
+}
+
+select option
+{
+    background-color: white;
+    color:black;
+}
+
+
+.category span
+{
+    position: absolute;
+    top:10%;
+    left: 2%;
+}
+
+/* div for fetching the date */
+
+.date
+{
+    
+    border: 1px solid gray;
+    width: 50%;
+    position: relative;
+}
+
+
+/* hovering over date input */
+
+.date span{
+    position: absolute;
+    top:10%;
+    left: 2%;
+}
+
+.date input
+{
+    position:absolute;
+    top:40%;
+    right: 1%;
+    width: 28rem;
+    height:5vh;
+    background-color: tomato;
+    border:none;
+    color:white;
+    
+    
+
+}
+.date input:hover{
+    background-color: yellowgreen;
+}
+
+
+/* creating div for deleting and adding button */
+
+.delete-add
+{
+
+    width:100%;
+    height:15vh;
+   display: flex;
+   flex-direction: row;
+  justify-content: center;
+   align-items: center;
+   border:1px solid gray;
+   border-bottom: none;
+   
+
+}
+
+/* div for delete button */
+
+
+.delete button{
+    width:12rem;
+    height:4rem;
+    margin-left: 3px;
+}
+
+/* div for add button */
+
+.add button
+{
+    width:12rem;
+    height:4rem;
+    margin-right: 3px;
+
+}
+
+
+/* creating list div for displaying the data from the database */
+
+.div-list
+{
+    width:100%;
+    height:auto;
+    display:flex;
+    flex-direction: column;
+    
+}
+
+/* div created to cover all the content of the database */
+
+.content-div
+{
+    width:100%;
+    height:11vh;
+    position:relative;
+   
+ 
+}
+
+/* 
+list*/
+
+
+.div-list ul li{
+
+    list-style-type: none;
+    
+    
+}
+
+/* creating button to display the category of the work  */
+
+
+.ticket{
+    position:absolute;
+    top:25%;
+    right:6%;
+    background-color: orange;
+    width:5rem;
+    height:3rem;
+   text-align: center;
+   margin-top: 2px;
+   color:white;
+   border:none;
+}
+
+/* creating checkbox to choose whether to delete or not delete an element and class of the button is ticket */
+
+
+.Checkbox
+{
+position:absolute;
+left:-4%;
+top:5%;
+
+}
+
+/* removing all the border on focus from  all the form elements on this app  */
+
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+
+
+
+
+
+
+

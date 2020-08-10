@@ -1,0 +1,184 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <script src="https://kit.fontawesome.com/45b326f848.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body>
+          <!-- creating main div -->
+        <div class="main-div">
+
+          <div class="div-title">
+
+            <h1>TODO APP</h1>
+
+          </div>
+
+               <!-- creating form div for entering data to the database-->
+          <div class="form-div">
+
+            <form action="/addData"  method="POST" id="todoform">
+                   
+               <div class="form-inside">
+               
+                    <!-- creating textarea -->
+                <div class="div-textarea">
+                 <span style="font-size: larger;font-weight: 500;margin-left:.7rem;">DESCRIPTION</span>
+                      <textarea name="content" id="" rows="5" cols="102" placeholder="What do you need to do?"></textarea>
+                </div>
+
+                <div class="category_date">
+
+                  <div  class="category">
+                
+                        <!-- select is used to give the option -->
+                
+                  <span style="font-size: larger;font-weight: 500;">CATEGORY</span>
+                    <select name="todo" form="todoform">
+                      <option value="">Choose from the options</option>
+                      <option value="personal">PERSONAL</option>
+                      <option value="work">WORK</option>
+                      <option value="school">SCHOOL</option>
+                      <option value="cleaning">CLEANING</option>
+                      <option value="other">OTHER</option>
+                    </select>
+              
+                  </div>
+                     <!-- date div is created to choose the date -->
+                  <div class="date">
+                    <span style="font-size: larger;font-weight: 500;">DATE</span>
+                    <input type="date" name="date">
+              
+                  </div>
+
+                </div>
+
+                <!-- div for add and delete task is created  -->
+                <div class="delete-add">
+                   
+                      <!-- div for adding element  -->
+                  <div class="add">
+
+                    <button type="submit" style="background-color: black;border:none;"><i class="fas fa-plus" style="color: white;font-size: medium;">&nbsp;<span style="color: white;">ADD TASK</span></i> </button>
+
+                  </div>
+                    <!-- div deleting element  -->  
+                  <div class="delete">
+
+                    <button type="submit" form="form2" style="background-color: red;border:none;">
+                      <i class="fas fa-trash-alt" style="color: white;padding-left: 10ox;"> &nbsp;<span style="color:white;margin-right: 10px;font-size: medium;">DELETE TASK</span></i>
+                    </button>
+
+                  </div>
+
+
+                </div>
+
+               
+
+
+                </div>
+
+
+
+            
+
+
+
+            </form>
+
+
+          </div>
+
+              <!-- div for displaying added element and use it to delete element -->
+
+          <div class="div-list">
+
+        <form action="/deleteData" method="POST" id="form2">
+            <!-- Unordered list is used -->
+         <ul>
+
+             <% for(let i of work){%>
+
+              
+              
+              <li>
+
+                
+
+                <div class="content-div">
+
+                  <input type="checkbox" name="check" class="Checkbox" value="<%=i._id%>">
+                  <h3>
+                    <%= i.content%>
+                  </h3>
+                  <p>
+                    <i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;<%= i.date%>
+                  </p>
+                  <!-- switch is used to display the different color of  category  of work-->   
+                <% switch(i.todo){
+
+                  case 'work':%>
+                  <button class="ticket" style="background-color: red;"><%=i.todo%></button>
+
+                  <% break;
+
+                  case 'personal':%>
+                  <button class="ticket" style="background-color: blue;"><%=i.todo%></button>
+                  
+                  <% break;
+                  case 'school':%>
+                  <button class="ticket" style="background-color: green;"><%=i.todo%></button>
+                  
+                  <% break;
+
+                  case 'cleaning':%>
+                  <button class="ticket" style="background-color: orangered;"><%=i.todo%></button>
+                  
+                  <% break;
+
+                  default:%>
+                  <button class="ticket" style="background-color: orange;"><%=i.todo%></button>
+                  <% break;
+
+                  }%>
+                 
+
+
+
+
+
+
+
+
+
+                </div>
+              </li>
+        
+              
+              <%}%>
+
+
+         </ul>
+
+        </form>
+
+      
+
+
+
+          </div>
+
+      
+
+
+       
+
+          
+    <!-- main div closed  -->
+
+         </div>
+    </body>
+</html>
